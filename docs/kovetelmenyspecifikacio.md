@@ -5,16 +5,16 @@
 1, Jelenlegi helyzet
 ----------------------
 
->Nálunk a Dzsuknukem Panziónál a vendége nyilvántartását pairon vezetük, az elmúlt évben viszont a panzió forgalma anyira megugrott, hogy a papiron valo nyilvántartás nehezen kezelhetővé és átláthatatlanná vált. Ezért arra szeretnénk megkérni önöket, hogy készitsenek nekünk egy olyan adatbázist amiben a vendégeink adatatit tárolhatjuk, illetve egy alkalmazást amivel a dolgozoink elérhetik és könyedén kezelhetik az adatokat. Az alkalmazás használatára windows operációs rendszerrel rendelkező eszközöket szereztünk be de preferálnánk, hogy a szoftver teljesen platformfüggetlen legyen.
+>Nálunk a Bástya Panziónál a vendégek nyilvántartását papiron vezettük, viszont az elmúlt évben a panzió forgalma annyira megugrott, hogy a papiron való nyilvántartás nehézkessé és átláthatatlanná vált. Ezért arra szeretnénk megkérni önöket, hogy készitsenek nekünk egy olyan adatbázist amiben a vendégeink adatait tárolhatjuk, illetve egy alkalmazást amivel a panzió dolgozói könyedén elérhetik valamint kezelhetik az adatokat. Az alkalmazás használatára windows operációs rendszerrel rendelkező eszközöket szereztünk be de preferálnánk, hogy a szoftver teljesen platformfüggetlen legyen.
 
 &nbsp;
 
-2, Milyen adtokat tárolunk ?
+2, Milyen adatokat tárolunk?
 -----------------------------
 >Az adatbázisnak tudnia kell tárolni a vendégek:
 >* Nevét
 >* Telefonszámát
->* email címét
+>* Email címét
 >* Szobaszámát
 >* Szoba típusa(1,2 vagy 3 ágyas)
 >* Szoba kivételének dátuma
@@ -23,22 +23,23 @@
 
 &nbsp;
 
-3, Milyen elvárásaink vannak a alkalmazással szemben ?
+3, Milyen elvárásaink vannak a alkalmazással szemben?
 -------------------------------------------------------
 >Rendelkezzen grafikus felülettel, legyen:
->* letisztult
->* átlátható
->* könyen kezelhető
+>* Letisztult
+>* Átlátható
+>* Könyen kezelhető
 >
->Az alkalmazásnak tudni kell az álábi műveleteket
+>Az alkalmazásnak tudnia kell az alábbi műveleteket:
 >* Vendég felvételét
 >* A meglévő adatok módositását
->* Havi bevétel lekérdezése
->* Az adapok pdf formátumba való exportálása(lehesen beálitani, hogy dátum mettől-meddig szeretnénk az adatokat)
+>* Bevétel lekérdezése
+>* Vendégek számának lekérdezése
+>* Az adatok pdf formátumba való exportálása(lehesen beálitani, hogy dátum mettől-meddig szeretnénk az adatokat)
 
 &nbsp;
 
-Az alkalmazás fejlesztéseben legyen szem előtt, hogy dolgozóink informatikailag nem képzet szakemberek igy kérnénk, hogy a fent emlitett elvárásokat az átlag ember számára leginkább kezelhető legyen.
+Az alkalmazás elkészítése során legyen szem előtt, hogy dolgozóink nem képzet informatikusok igy ha megoldható, akkor az alkalmazás az átlagos felhasználónak is könnyen kezelhető legyen.
 
 
 
