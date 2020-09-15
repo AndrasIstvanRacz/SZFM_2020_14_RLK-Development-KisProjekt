@@ -25,3 +25,11 @@ A panzióban jelenleg minden vendégünkkel kapcsolatos folyamatot papír segít
 
 A panzió szeretné kiküszöbölni a jelenlegi analóg rendszer általi nehézségeket így, mint minden kisebb-nagyobb cég ők is követik digitalizációt. A program funkciói között szerepel a legtöbb jelenlegi folyamat digitális változata. Nem ragaszkodnak az online adatbázishoz továbbá a lokális hálózaton való adat eléréshez. Megelégednek egy önálló gépen működő programmal. A rendszer képes kell, hogy legyen egy adott vendégről több adat tárolására is, hogy éppen ki melyik szobában tartózkodik. Emellett igen fontos lenne a könnyű kezelhetőség és egyben átláthatóság a felhasználók számára.
 
+## 6. Követelménylista
+* Egy rendszer ami nyilvántartja a panzióban megszált vendégeket.
+* A rendszer vendégenként legyen képes több adat tárolására.
+* A nyilvántartásba lehtővé kell tenni a meglévő elemek módosítását, törlését és új elem létrehozását.
+* A rendszer adjon lehetőséget az adathalmazban való keresésre.
+* A rendszer tegye lehetővé, hogy adott idő intervallumban lekérdezük a vendégek számát és a bevételt.
+* A rendszer tegye lehetővé, hogy a vendégek adatainak lementését pdf formátumban.
+
