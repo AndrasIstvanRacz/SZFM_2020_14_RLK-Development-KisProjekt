@@ -1,44 +1,19 @@
-*Vendégnyilvántartó követelményspecifikáció*
-============================================
-&nbsp;
+# Követelményspecifikáció
 
-1, Jelenlegi helyzet
-----------------------
+## 1.Bevezetés
+Egy Balaton parti panzió nagy forgalommal jár, az emberek szivesben jönnek egy meghitt, családiashangulatú helyre nyaralni. Eddig a vendegeink listájat és adatait erre a célra hasznalt könzvekben, füzetekben tároltuk. Napjainkban azonban, hogy versenyképesek tudjunk maradni nyitnunk kell a modern technologia felé. Éppen ezért a vezetés engyhangúan úgy döntött, hogy alkalmazkodik az új követelményekhez, és egy gyors és hatékony számítógépes rendszerre cseréljük a hagyományos, papir alapu könyvelést. Ehhez szükség lenne egy alkalmazásra amely akár több munkaálomáson is futhat de mégis egy és ugyan azon adathalmazt éri el. Ehhez tudunk biztosítani egy központi gépet amelyhez a munkaálomásoknak hozzáférést biztosítunk. Ilyen módon növelhetjük a hatékonyságunk mivel egyszerre több vendégel is foglalkozhatunk párhuzamosan.Mivel a projekt kezdeti stádiumban van elsőnek a legfontosabb funkciók fejlesztése fog megtörténni, majd a visszajelzések alapján priorizáljuk a további featureöket a felhasználói igények alapján.
 
->Nálunk a Dzsuknukem Panziónál a vendége nyilvántartását pairon vezetük, az elmúlt évben viszont a panzió forgalma anyira megugrott, hogy a papiron valo nyilvántartás nehezen kezelhetővé és átláthatatlanná vált. Ezért arra szeretnénk megkérni önöket, hogy készitsenek nekünk egy olyan adatbázist amiben a vendégeink adatatit tárolhatjuk, illetve egy alkalmazást amivel a dolgozoink elérhetik és könyedén kezelhetik az adatokat. Az alkalmazás használatára windows operációs rendszerrel rendelkező eszközöket szereztünk be de preferálnánk, hogy a szoftver teljesen platformfüggetlen legyen.
+## 2. Jelenlegi helyzet
 
-&nbsp;
+A Balaton egyre keresetebb a turizmus számára úgy belföldön mint külföldön. Ez a növekedés azt eredményezi, hogy az utóbbi években a mi panziónkban is megugrott a vendégeink száma. A gyors növekedés viszont megnöveli az adminisztráció mértékét is amiket papíron kell vezetnünk. Dolgozóinknak egy vendégről több adatott is rögziteni kell például:
 
-2, Milyen adtokat tárolunk ?
------------------------------
->Az adatbázisnak tudnia kell tárolni a vendégek:
->* Nevét
->* Telefonszámát
->* email címét
->* Szobaszámát
->* Szoba típusa(1,2 vagy 3 ágyas)
->* Szoba kivételének dátuma
->* Szoba elhagyásának dátuma
->* Fizetendő összeg
+* Fel kell vennünk a vendég nevét
+* Rögzitenünk kell a telefonszámát és email cimét
+* Tárolnunk kell a szobával kapcsolatos adatokat(Szobaszámát, Szoba típusa(1,2 vagy 3 ágyas), Szoba kivételének és elhagyásának dátuma) illetve a fizetendő összeget.
 
-&nbsp;
+Ezen adatok adminisztrálása kis vendégszám esetén kivitelezhető a hagyományos papír ceruza módszerrel de nagy létszámnál ez már lehetetlen.
 
-3, Milyen elvárásaink vannak a alkalmazással szemben ?
--------------------------------------------------------
->Rendelkezzen grafikus felülettel, legyen:
->* letisztult
->* átlátható
->* könyen kezelhető
->
->Az alkalmazásnak tudni kell az álábi műveleteket
->* Vendég felvételét
->* A meglévő adatok módositását
->* Havi bevétel lekérdezése
->* Az adapok pdf formátumba való exportálása(lehesen beálitani, hogy dátum mettől-meddig szeretnénk az adatokat)
+## 3. Vágyálom rendszer
 
-&nbsp;
-
-Az alkalmazás fejlesztéseben legyen szem előtt, hogy dolgozóink informatikailag nem képzet szakemberek igy kérnénk, hogy a fent emlitett elvárásokat az átlag ember számára leginkább kezelhető legyen.
-
-
+Amikor rájöttünk, hogy az klasszikus papír, ceruza alapú adminisztráció nem a legkiválóbb megoldás a panziónk részére elkezdtünk gondolkodni, hogy mi lehetne a legmegfelelőbb alternetíva. Hosszas gondolkozás után úgy döntötünk, hogy egy alkalmazásra lenne szükségunk. Ennek képesnek kell lenni tárolnia a Jelenlegi helyzet pontban emlitett adatokat. Az eltárolt adatokhoz elérést kell biztosítania a dolgozoink számára. Továbbá lehetöségük kell legyen keresni az adatbáziban és módosítai azon.
 
