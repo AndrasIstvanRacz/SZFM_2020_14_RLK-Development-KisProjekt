@@ -14,7 +14,8 @@ A projektet Java 14-be készítetük aminek projektmenedzsmentjéhez az Apache M
 
 ## 11. Architekturális terv 
 
-A rendszert felépítő alrendszerek (szoftver komponensek) lényegében a Java, Sql, Mavan használata Java FX keretén belül. Az alrendszerek meghatározása után a tulajdonságaikat kiaknázva vezérlési, valamint kommunikációs kapcsolatokat lehet létrehozni ez által. Ezeknek a komponenseknek és a köztük fennáló kapcsolatok alkotják a szoftver architekturáját. A rendszer szerepe az érdekelt szereplő kommunikációjának lehetővé tétele, a korai fejlesztési fázisok döntéseinek támogatása. Emellet fontos újrafelhasználhatóság elősegítése. Ennek meghatározásában nagy szerepet játszik a környezet, a fejlesztők céljai és stratégiája által befolyásolt követelmények. De mint minden tervnek ennek is megvannak a meghatározó pillérji: 
+A rendszert felépítő alrendszerek (szoftver komponensek) lényegében a Java, Sql, Mavan használata Java FX keretén belül. Az alrendszerek meghatározása után a tulajdonságaikat kiaknázva vezérlési, valamint kommunikációs kapcsolatokat lehet létrehozni ez által. Ezeknek a komponenseknek és a köztük fennáló kapcsolatok alkotják a szoftver architekturáját. A rendszer szerepe az érdekelt szereplő kommunikációjának lehetővé tétele, a korai fejlesztési fázisok döntéseinek támogatása. Emellet fontos újrafelhasználhatóság elősegítése. Ennek meghatározásában nagy szerepet játszik a környezet, a fejlesztők céljai és stratégiája által befolyásolt követelmények. De mint minden tervnek ennek is megvannak a meghatározó pillérji:
+
 * Architektúrát meghatározó fejlesztő szervezet szerkezetéből
 * Szereplők
 * Követelmények
@@ -22,14 +23,13 @@ A rendszert felépítő alrendszerek (szoftver komponensek) lényegében a Java,
 * A tervező tapasztalata
   
 Architektúra elemek:
+
 * Architektúrális minta
-  * típus elemek és kapcsolatok, kényszerek
-  * pl. kliens-szerver minta
+   * típus elemek és kapcsolatok, kényszerek
+   * pl. kliens-szerver minta
 *  Referencia modell
-  * standard funkcionális felosztás és
-    adatfolyam megoldások
-  * pl. adatbázis kezelő rendszer
+   * standard funkcionális felosztás és adatfolyam megoldások
+   * pl. adatbázis kezelő rendszer
 * Referencia architektúra
- * referencia modell leképezése szoftver
-      elemekre
- * pl. ISO OSI architektúra 
+   * referencia modell leképezése szoftver elemekre
+   * pl. ISO OSI architektúra
