@@ -33,3 +33,30 @@ Architektúra elemek:
 * Referencia architektúra
    * referencia modell leképezése szoftver elemekre
    * pl. ISO OSI architektúra
+
+### 11.1. Rendszer bővíthetősége  
+
+A rendszert teljesen objektum orientált szemlélet szerint kerül implementálásra vagyis a rendszer egy bizonyos szinten alkalmas lesz a bővítésre.
+
+### 11.2. Biztonsági funkciók 
+
+A szoftverben biztonsági funkciók implementálását nem terveztük.
+
+### 11.3. Adatbázis terv
+
+Az alkalmazásunk egy MySQL alapú adatbázistfog kezelni. Ez az adatbázis egy táblából, a Vendeg táblából fog állni. Ez a tábla tartalmazni fogja a vendégek nevét, telefonszámát, email címét, a szoba kivételének dátumát, a szoba elhagyasának dátumát, a szoba típusát(1, 2 vagy 3 ágyas) illetve a vendég által fizetendő összeget.
+
+### 12.4. Logikai adatmodell  
+
+![ER Diagram](ERD.jpg)
+
+   Oszlopok         |Tárolt adat |
+   ----------------|-------------------------  |
+   ID int(1000), Primary key, Foringe key| Vendég azonosító |       
+   Nev   varchar(255)|Vendég neve|                      
+   Telefonszám int(50)|Vendég telefonszáma|             
+   email varchar(255)|Vendég email címe|
+   SzobaKivetele date|Szoba kivételének dátuma|                   
+   SzobaElhagyasa date|Szoba elhagyásának dátuma|
+   SzobaTipusa varchar(255)|Szoba típusa (1, 2 vagy 3 ágyas)|
+   FizetendoOsszeg int(50)|Vendég által fizetendő összeg|     
