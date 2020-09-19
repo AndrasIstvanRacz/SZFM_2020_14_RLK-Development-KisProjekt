@@ -40,3 +40,19 @@ Ezek a 'funkciók' nem mások, mint:
  - A kiadott szobák feljegyzése.
  - A vendégek kijelentkezésének időpontja.
  - Az igényelt szoba típusa.
+
+ ## 8. Rendszerszereplők  
+
+A rendszerben két féle entitás csoportot különböztetünk meg.
+
+
+A két csoport:
+- Személyzet csoportja
+- Vendégek csoportja
+
+A programot a személyzet csoportja fogja használni és egyfajta szolgáltatást
+nyújt ezzel a vendégek csoportjának.
+
+A személyzet csoportjának sokkal több joga lesz, sőt a tagok nem is használhatják
+a programot. Nekik kell lebonyolítani a kapcsolattartást is a tagokkal.
+Feladatuk kiterjed a régi vendégek értesítésére szezonális kedvezmények esetén.
