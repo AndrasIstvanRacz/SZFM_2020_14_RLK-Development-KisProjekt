@@ -11,3 +11,17 @@ A jelenlegi rendszerünk, ami papíron és ceruzán alapuló nyilvántartó rend
  * A legmodernebb biztonsági előírásoknak megfelelni.
  
  * A GDPR előírásainak megfelelni.
+
+ ## 4. Jelenlegi üzleti folyamatok modellje
+
+A papír alapú rendszert egy relációs adatbázis váltja, aminek a segítségével a vendégek adatai tökéletesen tárolhatóak és könnyen lekérdezhetőek különböző szűrök segítségével. A program indítása után a főmenüben az alábbi választható lehetőségek állnak majd rendelkezésre a személyzet számára.
+
+ - A nyilvántartó rendszer felhasználó menüje:
+   
+    * A jelenlegi vendégek kilistázása
+    * Új vendég hozzáadása
+    * Vendégek adatainak szerkesztése, törlése
+    * Kilépés
+    
+A program megnyitása során megjelenik a képernyőn a vendégek adatai a továbbiakban az 'új vendég hozzáadása' menüben tudja a személyzet az új vendég adatait felvinni az adatbázisba. A 'vendégek adatainak szerkesztése, törlése' menüben módosíthatóak majd külön elemenként az adatbázisban szereplő adatok valamint törölhetőek is.
+ Végül a 'Kilépés' menüponttal zárható be a program.
