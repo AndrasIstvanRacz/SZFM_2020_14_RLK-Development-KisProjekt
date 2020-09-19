@@ -74,9 +74,11 @@ használhatjuk.
 
 A perzisztencia megvalósításáért a Hibernate objektum-relációs leképezést
 megvalósító programkönyvtár felel.
+
+
 Perzisztencia osztályok:
-   -DBUtils
-   -HibernateUtils
+- DBUtils
+- HibernateUtils
    
 ### 12.2. Üzleti logika osztályai  
 
