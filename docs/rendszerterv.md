@@ -46,7 +46,7 @@ A szoftverben biztonsági funkciók implementálását nem terveztük.
 
 Az alkalmazásunk egy MySQL alapú adatbázistfog kezelni. Ez az adatbázis egy táblából, a Vendeg táblából fog állni. Ez a tábla tartalmazni fogja a vendégek nevét, telefonszámát, email címét, a szoba kivételének dátumát, a szoba elhagyasának dátumát, a szoba típusát(1, 2 vagy 3 ágyas) illetve a vendég által fizetendő összeget.
 
-### 12.4. Logikai adatmodell  
+### 11.4. Logikai adatmodell  
 
 ![ER Diagram](ERD.jpg)
 
@@ -61,7 +61,7 @@ Az alkalmazásunk egy MySQL alapú adatbázistfog kezelni. Ez az adatbázis egy 
    SzobaTipusa varchar(255)|Szoba típusa (1, 2 vagy 3 ágyas)|
    FizetendoOsszeg int(50)|Vendég által fizetendő összeg|     
 
-## 14. Tesztterv  
+## 13. Tesztterv  
 
 Kód|Leírás|  
 ----|---  
