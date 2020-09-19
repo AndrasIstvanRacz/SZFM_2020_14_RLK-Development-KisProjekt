@@ -56,3 +56,40 @@ nyújt ezzel a vendégek csoportjának.
 A személyzet csoportjának sokkal több joga lesz, sőt a tagok nem is használhatják
 a programot. Nekik kell lebonyolítani a kapcsolattartást is a tagokkal.
 Feladatuk kiterjed a régi vendégek értesítésére szezonális kedvezmények esetén.
+
+## 12. Implementációs terv
+
+A tervezési folyamat során célszerű vagy mondhatjuk úgy, hogy ajánlott az általános logikai felépítést mindig valamilyen 
+grafikus reprezentációval
+modellezni, mert az emberi agy vizualizált objektumokkal könnyebben dolgozik.
+Az UML (=Unified Modeling Language), modellező nyelv segítségével a specifikációt és 
+a tervezést is grafikus
+formában, diagramok segítségével tudjuk dokumentálni. A követelményspecifikációban a használati
+esetdiagramokat (use case), az adatbázis tervezésnél az adatbázis diagramot, az OOP 
+tervezésnél az
+osztálydiagramot és objektumdiagramot valamint a szekvenciadiagramot, aktivitásdiagramot
+használhatjuk.
+
+### 12.1. Perzisztencia-osztályok 
+
+A perzisztencia megvalósításáért a Hibernate objektum-relációs leképezést
+megvalósító programkönyvtár felel.
+Perzisztencia osztályok:
+   -DBUtils
+   -HibernateUtils
+   
+### 12.2. Üzleti logika osztályai  
+
+Az üzleti logika a háromrétegű adatkezelő alkalmazások középső rétege, amely meghatározza 
+az alkalmazás működésének logikáját.
+A háromrétegű architektúra az alkalmazást három különálló rétegre osztja fel. E rétegek 
+komponensei önállóan léteznek, és együttműködésük során egyidejűleg több különböző 
+alkalmazásnak is a részei lehetnek.
+Az adatbázislogika az adatok nyers tárolását végzi. Semmilyen információval nem rendelkezik 
+az adatok feldolgozásával vagy megjelenítésével kapcsolatban.
+Az ügyviteli (üzleti) logika az alkalmazás logikáját, működési szabályait határozza meg. 
+Semmilyen információval nem rendelkezik az adatok tárolásával vagy megjelenítésével kapcsolatban.
+A felhasználói interfész feladata az ügyviteli logika által küldött adatok formázása és
+megjelenítése. Biztosítja a felhasználó hozzáférését az ügyviteli logika szolgáltatásaihoz. 
+Sohasem kerül közvetlen kapcsolatba az adatbázissal, és nem végez semmilyen műveletet az 
+adatokon.
