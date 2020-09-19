@@ -60,3 +60,16 @@ Az alkalmazásunk egy MySQL alapú adatbázistfog kezelni. Ez az adatbázis egy 
    SzobaElhagyasa date|Szoba elhagyásának dátuma|
    SzobaTipusa varchar(255)|Szoba típusa (1, 2 vagy 3 ágyas)|
    FizetendoOsszeg int(50)|Vendég által fizetendő összeg|     
+
+## 14. Tesztterv  
+
+Kód|Leírás|  
+----|---  
+T01| A program elindítása.|
+T02| A teljes adatbázis lekérdezése.|
+T03| Keresés az adatbázisban megadot érték szerint.|
+T04| Új vendég hozzáadása az adatbázishoz.|
+T05| Az adatbazis rekordjainak módosítása.|
+T06| Vendég törlése.|
+T07| Típushiba kezelésének tesztelése.|
+T08| Grafikus felulet reszponzivításának tesztelése.|
