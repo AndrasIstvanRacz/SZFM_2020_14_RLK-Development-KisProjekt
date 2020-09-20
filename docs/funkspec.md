@@ -1,4 +1,3 @@
-
 # Funkcionális specifikáció
 
 ## 1. Bevezetés
@@ -81,4 +80,3 @@ Ebben a menüpontban lesz lehetöségunk új vendég felvételére a megadot cel
 A menüpont kiválasztásakor ahol a Főoldal menüponthoz hasonlóan latjuk a táblát és tudunk keresni, de itt még lehetöségünk nyilk a táblázat cellájinak szerkesztésére illetve minden sor végén található egy törlés gomb ami az adot sor törlésére szolgál.
 
 A grafikus felület reszponzív megjelenésü. A táblázaokban az oldalso scrollbar használatával vagy egérgörgőve tekerhetünk feljebb vagy lejebb. Adatmegadáskor típushiba eseten felugró ablak jelzi a hibát.
-
