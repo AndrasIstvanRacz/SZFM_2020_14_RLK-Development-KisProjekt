@@ -21,3 +21,27 @@ A projektet készítő három személy teljesen egyenjogú szerepkörökkel rend
 | Rácz András István | Szoftverfejlesztő |
 | Ladik Balázs       | Szoftverfejlesztő |
 | Kosztya Zoltán     | Szoftverfejlesztő |
+
+# 4. Ütemterv
+
+# Mérföldkövek
+A program elkészítésének fő mérföldkövei:
+
+# Első felvonás
+* A git project használatának elkezdése
+* A git repó elkészítése
+* A tagok git-re való regisztrációja illetve a projekthez felvétele
+* A követelményspecifikáció megírása
+* A funckionális specifikáció megírása
+* A rendszerterv megírása
+* A program prototípus elkészítése
+
+# Második felvonás
+* A rendszer tesztjeinek felállítása
+* A program adatbázisának elkészítése
+* A program tesztelése a minimális funkciókkal
+
+# Végső munkálatok
+* A program biztonságának növelése, felkészítés a használatra
+* A felhasználó visszajelzések beletervezése a projektbe
+* A kényelmi feature-ök fejlesztése
