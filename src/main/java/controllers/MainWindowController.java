@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import org.example.App;
 
-public class PrimaryController {
+public class MainWindowController {
 
     @FXML
     private void switchToSecondary() throws IOException {
