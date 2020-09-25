@@ -13,7 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1152.0" stylesheets="@../../css/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
    <left>
-      <GridPane prefHeight="671.0" prefWidth="250.0" stylesheets="@../../css/Style.css" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="671.0" prefWidth="250.0" style="-fx-background-color: rgba(0, 0, 0, 0.1);" stylesheets="@../../css/Style.css" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -43,18 +43,4 @@
          </children>
       </GridPane>
    </left>
-   <center>
-      <GridPane BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="345.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="638.0" minHeight="10.0" prefHeight="632.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-         </children>
-      </GridPane>
-   </center>
 </BorderPane>
