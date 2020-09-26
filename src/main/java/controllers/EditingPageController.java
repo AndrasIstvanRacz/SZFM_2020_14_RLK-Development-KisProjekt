@@ -1,4 +1,209 @@
 package controllers;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
+
 public class EditingPageController {
+
+    @FXML
+    private ComboBox<String> cbColumnName;
+
+    @FXML
+    private TextField tfSearch;
+
+    @FXML
+    private Button btnSearch;
+
+    @FXML
+    private TableView<?> table;
+
+    @FXML
+    private TableColumn<?, ?> columnID;
+
+    @FXML
+    private TableColumn<?, ?> columnName;
+
+    @FXML
+    private TableColumn<?, ?> columnPhoneNumber;
+
+    @FXML
+    private TableColumn<?, ?> columnEmail;
+
+    @FXML
+    private TableColumn<?, ?> columnStartDate;
+
+    @FXML
+    private TableColumn<?, ?> columnEndDate;
+
+    @FXML
+    private TableColumn<?, ?> columnRoomType;
+
+    @FXML
+    private TableColumn<?, ?> columnPay;
+
+    @FXML
+    private TableColumn<?, ?> columnDelete;
+
+
+    //private EldersRepository eldersRepository = new EldersRepository();
+
+    /*@FXML
+    protected void initialize() {
+        new Thread(new Runnable() {
+            @Override public void run() {
+                handleSearch();
+            }
+        }).start();
+    }
+
+    private void initColumn() {
+        columnID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        columnName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        columnPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        columnEmail.setCellValueFactory(new PropertyValueFactory<>("city"));
+        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("street"));
+        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("number"));
+        columnRoomType.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+        columnPay.setCellValueFactory(new PropertyValueFactory<>("placeOfBirth"));
+    }
+
+    @FXML
+    private void handleSearch() {
+        try {
+            ObservableList<CareTaking> data = FXCollections.observableArrayList(
+                    caretakersRepository.findByColumn(getColumnName(cbColumnName.getValue().trim()),
+                            tfSearch.getText().trim()));
+            tfSearchByColumn.clear();
+            caretake.setItems(data);
+            initColumn();
+        }catch (Exception e){
+            Logger.error("Search by invalid type");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hiba üzenet");
+            alert.setHeaderText(null);
+            alert.setContentText("Érvénytelen típus adat vagy hibás adatbázis kapcsolat.");
+            alert.showAndWait();
+        }
+    }
+
+    private String getColumnName(String name){
+        String columnName;
+        if(name.equals("ID")){
+            columnName = "id";
+            return columnName;
+        }
+        else if(name.equals("Név")){
+            columnName = "name";
+            return columnName;
+        }
+        else if(name.equals("Telefonszám")){
+            columnName = "phonenumber";
+            return columnName;
+        }
+        else if(name.equals("E-mail")){
+            columnName = "emial";
+            return columnName;
+        }
+        else if(name.equals("Szoba kivétele")){
+            columnName = "startdate";
+            return columnName;
+        }
+        else if(name.equals("Szoba elhagyása")){
+            columnName = "enddate";
+            return columnName;
+        }
+        else if(name.equals("Szoba típusa")){
+            columnName = "roomtype";
+            return columnName;
+        }
+        else {
+            columnName = "payment";
+            return columnName;
+        }
+    }*/
+
+    /*private void editTableColumns (){
+
+
+        columnElderName.setCellFactory(TextFieldTableCell.forTableColumn());
+        columnElderName.setOnEditCommit(expStringCellEditEvent -> {
+            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setElderName(expStringCellEditEvent.getNewValue());
+            caretakersRepository.commitChange(tmp);
+        });
+        columnEmployeeName.setCellFactory(TextFieldTableCell.forTableColumn());
+        columnEmployeeName.setOnEditCommit(expStringCellEditEvent -> {
+            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setEmployeeName(expStringCellEditEvent.getNewValue());
+            caretakersRepository.commitChange(tmp);
+        });
+        columnLunch.setCellFactory(TextFieldTableCell.forTableColumn());
+        columnLunch.setOnEditCommit(expStringCellEditEvent -> {
+            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setLunch(expStringCellEditEvent.getNewValue());
+            caretakersRepository.commitChange(tmp);
+        });
+        columnPrice.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        columnPrice.setOnEditCommit(expStringCellEditEvent -> {
+            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setPrice(expStringCellEditEvent.getNewValue());
+            caretakersRepository.commitChange(tmp);
+        });
+        columnDate.setCellFactory(TextFieldTableCell.forTableColumn(new LocalDateStringConverter()));
+        columnDate.setOnEditCommit(expLocalDateCellEditEvent -> {
+            CareTaking tmp = expLocalDateCellEditEvent.getTableView().getItems().
+                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
+            tmp.setDate(expLocalDateCellEditEvent.getNewValue());
+            caretakersRepository.commitChange(tmp);
+        });
+        columnCareTime.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
+        columnCareTime.setOnEditCommit(expLocalDateCellEditEvent -> {
+            CareTaking tmp = expLocalDateCellEditEvent.getTableView().getItems().
+                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
+            tmp.setCareTime(expLocalDateCellEditEvent.getNewValue());
+            caretakersRepository.commitChange(tmp);
+        });
+        columnCareTimeWithoutTravel.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
+        columnCareTimeWithoutTravel.setOnEditCommit(expLocalDateCellEditEvent -> {
+            CareTaking tmp = expLocalDateCellEditEvent.getTableView().getItems().
+                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
+            tmp.setCareTimeWithoutTravel(expLocalDateCellEditEvent.getNewValue());
+            caretakersRepository.commitChange(tmp);
+        });
+        columnDelete.setCellFactory(param -> new TableCell<>() {
+            private final Button deleteButton = new Button("Törölés");
+
+            @Override
+            protected void updateItem(CareTaking caretake, boolean empty) {
+                super.updateItem(caretake, empty);
+                if (caretake == null) {
+                    setGraphic(null);
+                    return;
+                }
+                setGraphic(deleteButton);
+                deleteButton.setOnAction(actionEvent -> deleteRow(getTableView(), caretake)
+                );
+            }
+        });
+        caretake.setEditable(true);
+    }
+
+    private void deleteRow(TableView tableView, CareTaking careTake){
+        try {
+            tableView.getItems().remove(careTake);
+            caretakersRepository.removeCareTake(careTake);
+        }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hiba üzenet");
+            alert.setHeaderText(null);
+            alert.setContentText("A kijelöltt sor törlése sikertelen.");
+            alert.showAndWait();
+        }
+    }*/
 }
+
