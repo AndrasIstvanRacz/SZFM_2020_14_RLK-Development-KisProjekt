@@ -5,6 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
 <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="539.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainPageController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,16 +29,16 @@
           <RowConstraints maxHeight="450.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView cacheShape="false" centerShape="false" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false" scaleShape="false" stylesheets="@../../css/TableStyle.css" GridPane.rowIndex="1">
+            <TableView fx:id="table" cacheShape="false" centerShape="false" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false" scaleShape="false" stylesheets="@../../css/TableStyle.css" GridPane.rowIndex="1">
               <columns>
-                <TableColumn minWidth="-1.0" prefWidth="-1.0" text="ID" />
-                <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Név" />
-                  <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Telefonszám" />
-                  <TableColumn minWidth="-1.0" prefWidth="-1.0" text="E-mail" />
-                  <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Szoba kivétele" />
-                  <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Szoba elhagyása" />
-                  <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Szoba típusa" />
-                  <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Fizetendő összeg" />
+                <TableColumn fx:id="columnID" minWidth="-1.0" prefWidth="-1.0" text="ID" />
+                <TableColumn fx:id="columnName" minWidth="-1.0" prefWidth="-1.0" text="Név" />
+                  <TableColumn fx:id="columnPhoneNumber" minWidth="-1.0" prefWidth="-1.0" text="Telefonszám" />
+                  <TableColumn fx:id="columnEmail" minWidth="-1.0" prefWidth="-1.0" text="E-mail" />
+                  <TableColumn fx:id="columnStartDate" minWidth="-1.0" prefWidth="-1.0" text="Szoba kivétele" />
+                  <TableColumn fx:id="columnEndDate" minWidth="-1.0" prefWidth="-1.0" text="Szoba elhagyása" />
+                  <TableColumn fx:id="columnRoomType" minWidth="-1.0" prefWidth="-1.0" text="Szoba típusa" />
+                  <TableColumn fx:id="columnPay" minWidth="-1.0" prefWidth="-1.0" text="Fizetendő összeg" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -59,9 +60,24 @@
                 <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
               </rowConstraints>
                 <children>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/SecondaryStyle.css" text="Keresés" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <TextField maxHeight="30.0" maxWidth="1.7976931348623157E308" prefColumnCount="0" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <ComboBox maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="btnSearch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/SecondaryStyle.css" text="Keresés" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfSearch" maxHeight="30.0" maxWidth="1.7976931348623157E308" prefColumnCount="0" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cbColumnName" maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <items>
+                          <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Név" />
+                              <String fx:value="Telefonszám" />
+                              <String fx:value="E-mail" />
+                              <String fx:value="Szoba kivétele" />
+                              <String fx:value="Szoba elhagyása" />
+                              <String fx:value="Szoba típusa" />
+                              <String fx:value="Fizetendő összeg" />
+                          </FXCollections>
+                      </items>
+                      <value>
+                          <String fx:value="ID" />
+                      </value>
+                  </ComboBox>
                 </children>
             </GridPane>
          </children>
