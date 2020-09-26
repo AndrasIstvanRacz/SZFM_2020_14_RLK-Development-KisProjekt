@@ -5,6 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
 <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="539.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditingPageController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -61,7 +62,22 @@
                 <children>
                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/SecondaryStyle.css" text="Keresés" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                   <TextField maxHeight="30.0" maxWidth="1.7976931348623157E308" prefColumnCount="0" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <ComboBox maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <items>
+                          <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Név" />
+                              <String fx:value="Telefonszám" />
+                              <String fx:value="E-mail" />
+                              <String fx:value="Szoba kivétele" />
+                              <String fx:value="Szoba elhagyása" />
+                              <String fx:value="Szoba típusa" />
+                              <String fx:value="Fizetendő összeg" />
+                          </FXCollections>
+                      </items>
+                      <value>
+                          <String fx:value="ID" />
+                      </value>
+                  </ComboBox>
                 </children>
             </GridPane>
          </children>
