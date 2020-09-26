@@ -10,20 +10,17 @@ A Követelmény specifikáció 'Követelménylista' című bekezdése alapján a
 A programmal lehetőséget szeretnénk nyújtani a panzióban megszállt vendégek nyilvántartására. Továbbá a panzióban dolgozó személyzet számára szeretnénk átláthatóbbá tenni az adminisztrációt. Akár több munkaállomáson is futhat de mégis egy és ugyan azon adathalmazt éri el, így növelve a hatékonyságot.
 
 * A rendszer vendégenként legyen képes több adat tárolására:
-Az egyes vendégekről szeretnénk a lehető legtöbb információt eltárolni. Mikor jelenkeztek be, meddig tartózkodtak a panzióban, mennyit fizettek a szállásért.
+Az egyes vendégekről szeretnénk a lehető legtöbb információt eltárolni. Mikor jelentkeztek be, meddig tartózkodtak a panzióban, mennyit fizettek a szállásért.
 Illetve a vendégek fontosabb információit mint például név, telefonszám stb.
 
 * A nyilvántartásba lehetővé kell tenni a meglévő elemek módosítását, törlését és új elem létrehozását:
-A dinamikusan változó nyilvántartás lehetőséget kínál, hogy ez által új vendégeket vehessen fel a panzió vagy az esetlegesen a tervezettnél korábban távozó vendégeket könnyen és egyszerűen képes legyen kitörölni a nyilvántartásból, vagy ha egy vendégnek javítani kell az adatait akkor azt a lehető legegyszerűbben képes legyen a dolgozó megtenni. A vendégek listáját is könnyedséggel lehet változtatni, hogy éppen a panzióban tartózkodik vagy sem. Illetve, hogy melyik szobában helyezkedik el. Az új vendégek felvételét is lelehet bonyolítani vagy az esetlegesen a szobában vagy a panzióban okozott kárt is könnyen fel lehet vinni az adatbázisba. Ezen belül a vendégek tartózkodási idejének esetleges meghosszabbítását is egyszerűen fel lehet vinni.
+A dinamikusan változó nyilvántartás lehetőséget kínál, hogy ez által új vendégeket vehessen fel a panzió vagy az esetlegesen a tervezettnél korábban távozó vendégeket könnyen és egyszerűen képes legyen kitörölni a nyilvántartásból, vagy ha egy vendégnek javítani kell az adatait, akkor azt a lehető legegyszerűbben képes legyen a dolgozó megtenni. A vendégek listáját is könnyedséggel lehet változtatni, hogy éppen a panzióban tartózkodik vagy sem. Illetve, hogy melyik szobában helyezkedik el. Az új vendégek felvételét is le lehet bonyolítani vagy az esetlegesen a szobában vagy a panzióban okozott kárt is könnyen fel lehet vinni az adatbázisba. Ezen belül a vendégek tartózkodási idejének esetleges meghosszabbítását is egyszerűen fel lehet vinni.
 
 * A rendszer adjon lehetőséget az adathalmazban való keresésre:
 A program segítséget nyújt ,hogy a dolgozó különböző szempontok alapján mint pl: érkezés dátuma szerint tudja csökkenő vagy növekvő sorrendbe listázni a vendégeket. Így könnyedén látható, hogy ki az akinek esedékes a kiköltözés. De ide tartozik, hogy leellenőrizhesse a dolgozó, hogy adott szobában ki(k) tartózkodik és, hogy jelenleg bent van-e a panzióban.
 
 * A rendszer tegye lehetővé, hogy adott idő intervallumban lekérdezük a vendégek számát és a bevételt:
 A programban van egy olyan funkció is ami alapján a dolgozók képesek lehetnek egyszerűbbnek titulált lekérdezéseket is végrehajtani. Például, hogy egy bizonyos intervallumban hány vendég van a panzióban és mennyi az akkori bevétel. Így időt spórolhatnak mivel nem kell mindig az eddigi összes adatot lekérdezni, csak ami éppen kell.
-
-* A rendszer tegye lehetővé, hogy a vendégek adatainak lementését pdf formátumban:
-A szoftverben az egyik legfontosabb „funkció” az nem más mint, hogy egyszerű könnyen kezelhető és átlátható legyen a felhasználók számára. Ez például abban valósul meg, hogy lehetőség van az adatok lementésére pdf-ben, ami egy könnyen átlátható és használható formátum.
 
 ## 3. Jelenlegi helyzet
 
@@ -55,7 +52,7 @@ A program megnyitása során megjelenik a képernyőn a vendégek adatai a tová
 
 ## 5. Igényelt üzleti folyamatok
 
-A program alapvetően egy oldalsó menűsávból és egy funkcíó képernyőből áll. Az oldalsó menüsáv feladata, hogy konyedén tudjunk navigálni a különböző funkcíok közöt, amit a funkcióképernyön fog megjeleníteni a szoftver. A program célja, hogy egy SQL alapu adatbázis elönyeit ki tudjuk használni SQL utasítások írása nélkül. Így a mi feladatunk, hogy az adatbázis fontosabb funkciók használatára lehetőséget biztosítanunk a felhasználok számára.
+A program alapvetően egy oldalsó menűsávból és egy funkcíó képernyőből áll. Az oldalsó menüsáv feladata, hogy konyedén tudjunk navigálni a különböző funkciók között, amit a funkcióképernyőn fog megjeleníteni a szoftver. A program célja, hogy egy SQL alapú adatbázis előnyeit ki tudjuk használni SQL utasítások írása nélkül. Így a mi feladatunk, hogy az adatbázis fontosabb funkciói használatára lehetőséget biztosítsunk a felhasználók számára.
 
 A következő funkciók a fontosabbak:
    * Hozzáadás
@@ -63,20 +60,20 @@ A következő funkciók a fontosabbak:
    * Módosítás
    * Törlés
 
-Ezen funkciók könyed eléréséhez egy grafikus felületett biztosítunk, így megkönyitvén a program használatát a felhasználok részére. Az első említet funkció, a hozzáadás, egy új ellem hozzáadását jelenti ahoz a táblához amiben a vendégek adatait tároljuk. Új vendég megadásakor a név, a szoba száma, a szoba használatának kezdő idöpontja mezők kitöltése kötelező, illetve minden vendég rendelkezni fog egy azonosítoval amit a szoftver automatikusan general. A másik három funkció az ezen hozzáadásokból létrejöt táblat fogja használni. A lekerdezés a táblában lévő adatok grafikus megjelnítését jelenti, illetve a lekért adattáblában való keresésre is lehetőséget ad. Továbbá lehetöség lesz az adatok módosítására és törlésére is. A szerkesztés a cellák átírásával majd az Enter gomb leütésével lesz lehetöség a szerkesztö táblén belül. Az elöbb említet táblában lesz továbbá megtalálható a törlés gomb ami atomatikusan kitörli az adot sort az adatbázisból.
+Ezen funkciók könnyed eléréséhez egy grafikus felületett biztosítunk, így megkönnyítve a program használatát a felhasználok részére. Az első említet funkció, a hozzáadás, egy új elem hozzáadását jelenti ahhoz a táblához amiben a vendégek adatait tároljuk. Új vendég megadásakor a név, a szoba száma, a szoba használatának kezdő idöpontja mezők kitöltése kötelező, illetve minden vendég rendelkezni fog egy azonosítoval amit a szoftver automatikusan general. A másik három funkció az ezen hozzáadásokból létrejöt táblat fogja használni. A lekerdezés a táblában lévő adatok grafikus megjelenítését jelenti, illetve a lekért adattáblában való keresésre is lehetőséget ad. Továbbá lehetőség lesz az adatok módosítására és törlésére is. A szerkesztés a cellák átírásával majd az Enter gomb leütésével lesz lehetséges a szerkesztő táblán belül. Az előbb említet táblában lesz továbbá megtalálható a törlés gomb ami atomatikusan kitörli az adott sort az adatbázisból.
 
 ## 6. Képernyőtervek
 
-Az alkalmazásnak probáltunk a lehetö legmegfelelöbb designt megalkotni, amely megkönnyíti a használatot, de a megjelenése igényes, modern hatást kelt, mégis egyszerű. Ehhez JavaFX 14-et használtunk amely lehetöséget adot nekünk a letísztult és átlátható design megalkotására és ugyanakkor rengeteg fontos és hasznos felhasználói eszköz megvalósítását egyszerűsíti. Az oldal alapját egy oldalsó menüsáv alkotja amely mellett található az az ablakrész ahol a kiválasztott menüpontott meg fogjuk jeleníteni. Jelenleg 3 menüpont van tervbe véve:
+Az alkalmazásnak próbáltunk a lehető legmegfelelőbb designt megalkotni, amely megkönnyíti a használatot, viszont megjelenése igényes, modern hatást keltsen az alkalmazás használójának. Ehhez JavaFX 14-et használtunk amely lehetőséget adott nekünk a letisztult és átlátható design megalkotására és ugyanakkor rengeteg fontos és hasznos felhasználói eszköz megvalósítását egyszerűsíti. Az oldal alapját egy oldalsó menüsáv alkotja amely mellett található az az ablakrész ahol a kiválasztott menüpontott meg fogjuk jeleníteni. Jelenleg 3 menüpont van tervbe véve:
 * Főoldal:
-A szoftver elindulásakor automatikusan ezt latjuk elsőnek. Itt megjelenitésre kerül a teljes adattábla illtve lehetöség lesz az adattáblában való keresésre oszlop szerint.
+A szoftver elindulásakor automatikusan ezt latjuk elsőnek. Itt megjelenítésre kerül a teljes adattábla illetve lehetőség lesz az adattáblában való keresésre oszlop szerint.
 
 
 * Vendég hozzáadása:
-Ebben a menüpontban lesz lehetöségunk új vendég felvételére a megadot cellák kitöltésével majd a hozzáad gomb megnzomásával. 
+Ebben a menüpontban lesz lehetőségünk új vendég felvételére a megadott cellák kitöltésével majd a hozzáadás gomb megnyomásával. 
 
 
 * Szerkesztés:
-A menüpont kiválasztásakor ahol a Főoldal menüponthoz hasonlóan latjuk a táblát és tudunk keresni, de itt még lehetöségünk nyilk a táblázat cellájinak szerkesztésére illetve minden sor végén található egy törlés gomb ami az adot sor törlésére szolgál.
+A menüpont kiválasztásakor a Főoldal menüpontjához hasonlóan látjuk a táblát és tudunk keresni, de itt még lehetőségünk adódik a táblázat celláinak szerkesztésére illetve minden sor végén található egy törlés gomb ami az adot sor törlésére szolgál.
 
-A grafikus felület reszponzív megjelenésü. A táblázaokban az oldalso scrollbar használatával vagy egérgörgőve tekerhetünk feljebb vagy lejebb. Adatmegadáskor típushiba eseten felugró ablak jelzi a hibát.
+A grafikus felület reszponzív megjelenésű. A táblázatban az oldalsó scrollbar használatával vagy egérgörgővel tekerhetünk feljebb vagy lejebb. Adatok megadásakor ha típushiba történik, felugró ablak jelzi a hibát.
