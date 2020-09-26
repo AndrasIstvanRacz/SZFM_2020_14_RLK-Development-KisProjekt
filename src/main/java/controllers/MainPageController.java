@@ -100,6 +100,10 @@ public class MainPageController {
             columnName = "phonenumber";
             return columnName;
         }
+        else if(name.equals("E-mail")){
+            columnName = "emial";
+            return columnName;
+        }
         else if(name.equals("Szoba kivétele")){
             columnName = "startdate";
             return columnName;
