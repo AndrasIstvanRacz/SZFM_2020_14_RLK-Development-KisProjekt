@@ -43,11 +43,15 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <GridPane>
+            <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="1.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="1.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="46.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="1.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="1.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
@@ -55,9 +59,9 @@
                 <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
               </rowConstraints>
                 <children>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/SecondaryStyle.css" text="Hozzáadás" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField maxHeight="30.0" maxWidth="1.7976931348623157E308" prefColumnCount="0" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ComboBox maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.rowIndex="1" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/SecondaryStyle.css" text="Keresés" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <TextField maxHeight="30.0" maxWidth="1.7976931348623157E308" prefColumnCount="0" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ComboBox maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 </children>
             </GridPane>
          </children>

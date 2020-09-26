@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1152.0" stylesheets="@../../css/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1152.0" stylesheets="@../../css/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController" fx:id="mainWindow">
    <left>
-      <GridPane prefHeight="671.0" prefWidth="250.0" style="-fx-background-color: rgba(0, 0, 0, 0.1)" stylesheets="@../../css/Style.css" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="671.0" prefWidth="250.0" style="-fx-background-color: rgba(0, 0, 0, 0.1)" stylesheets="@../../css/Style.css" BorderPane.alignment="CENTER" >
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -16,7 +15,7 @@
           <RowConstraints maxHeight="131.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <GridPane prefHeight="253.0" prefWidth="250.0">
+            <GridPane prefHeight="253.0" prefWidth="250.0" >
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
               </columnConstraints>
@@ -26,9 +25,9 @@
                 <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button ellipsisString="" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToSecondary" stylesheets="@../../css/Style.css" text="Főoldal" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../../css/Style.css" text="Hozzáadás" GridPane.rowIndex="1" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../../css/Style.css" text="Szerkesztés" GridPane.rowIndex="2" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleClicks" fx:id="btnMain" stylesheets="@../../css/Style.css" text="Főoldal" GridPane.rowIndex="0"/>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleClicks" fx:id="btnAddition" stylesheets="@../../css/Style.css" text="Hozzáadás" GridPane.rowIndex="1" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleClicks" fx:id="btnEditing" stylesheets="@../../css/Style.css" text="Szerkesztés" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>
