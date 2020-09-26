@@ -42,6 +42,19 @@
     -fx-border-radius: 0;
 }
 
+.combo-box .list-cell{
+    -fx-background-color:transparent;
+    -fx-text-fill: white;
+}
+
+.combo-box .list-cell:hover{
+    -fx-background-color:rgba(0, 0, 0, 0.3);
+}
+
+.combo-box .list-cell:pressed{
+    -fx-background-color:rgba(0, 0, 0, 0.4);
+}
+
 .label {
     -fx-background-color: rgba(0, 0, 0, 0.1);
     -fx-text-fill: White;
