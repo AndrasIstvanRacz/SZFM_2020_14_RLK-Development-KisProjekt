@@ -79,4 +79,17 @@ public class GuestsRepository {
      * Remove Guests from the table.
      * @param entity
      */
+    public void removeGuests(Guests entity){
+        EntityManager em = EmfGetter.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.remove(em.contains(entity) ? entity : em.merge(entity));
+            em.getTransaction().commit();
+            Logger.info("Entity removed from the database successfully");
+        }catch (Exception e) {
+            Logger.error("Remove failed");
+        } finally {
+            em.close();
+        }
+    }
 }
