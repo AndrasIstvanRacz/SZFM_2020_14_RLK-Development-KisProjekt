@@ -7,13 +7,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
 @Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Table( name = "guests")
 public class Guests {
 
@@ -32,10 +30,10 @@ public class Guests {
     private String email;
 
     @Column(name = "startdate")
-    private Date startdate;
+    private LocalDate startdate;
 
     @Column(name = "enddate")
-    private Date enddate;
+    private LocalDate enddate;
 
     @Column(name = "roomtype")
     private String roomtype;
@@ -75,19 +73,19 @@ public class Guests {
         this.email = email;
     }
 
-    public Date getStartdate() {
+    public LocalDate getStartdate() {
         return startdate;
     }
 
-    public void setStartdate(Date startdate) {
+    public void setStartdate(LocalDate startdate) {
         this.startdate = startdate;
     }
 
-    public Date getEnddate() {
+    public LocalDate getEnddate() {
         return enddate;
     }
 
-    public void setEnddate(Date enddate) {
+    public void setEnddate(LocalDate enddate) {
         this.enddate = enddate;
     }
 
