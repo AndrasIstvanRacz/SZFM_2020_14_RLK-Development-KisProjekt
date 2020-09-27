@@ -4,3 +4,4 @@
 ID   | Elvárt teljesítmény leírása | Teszt sikeressége | Tesztelő neve
 ----|----------|-----------|---------|
 T-01 | A program elindítása. | Sikeres | Balázs
+T-02 | A teljes adatbázis lekérdezése. | Sikeres | Balázs
