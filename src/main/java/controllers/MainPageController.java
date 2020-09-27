@@ -1,10 +1,15 @@
 package controllers;
 
+import database.GuestsRepository;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.Guests;
 import org.tinylog.Logger;
+
+import java.time.LocalDate;
 
 public class MainPageController {
 
@@ -18,63 +23,59 @@ public class MainPageController {
     private Button btnSearch;
 
     @FXML
-    private TableView<?> table;
+    private TableView<Guests> table;
 
     @FXML
-    private TableColumn<?, ?> columnID;
+    private TableColumn<Guests, Integer> columnID;
 
     @FXML
-    private TableColumn<?, ?> columnName;
+    private TableColumn<Guests, String> columnName;
 
     @FXML
-    private TableColumn<?, ?> columnPhoneNumber;
+    private TableColumn<Guests, Integer> columnPhoneNumber;
 
     @FXML
-    private TableColumn<?, ?> columnEmail;
+    private TableColumn<Guests, String> columnEmail;
 
     @FXML
-    private TableColumn<?, ?> columnStartDate;
+    private TableColumn<Guests, LocalDate> columnStartDate;
 
     @FXML
-    private TableColumn<?, ?> columnEndDate;
+    private TableColumn<Guests, LocalDate> columnEndDate;
 
     @FXML
-    private TableColumn<?, ?> columnRoomType;
+    private TableColumn<Guests, String> columnRoomType;
 
     @FXML
-    private TableColumn<?, ?> columnPay;
+    private TableColumn<Guests, Integer> columnPay;
 
 
-    //private EldersRepository eldersRepository = new EldersRepository();
+    private GuestsRepository guestsRepository = new GuestsRepository();
 
     /*@FXML
     protected void initialize() {
-        new Thread(new Runnable() {
-            @Override public void run() {
-                handleSearch();
-            }
-        }).start();
+        new Thread(() -> handleSearch()).start();
     }
 
     private void initColumn() {
         columnID.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        columnPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("gender"));
-        columnEmail.setCellValueFactory(new PropertyValueFactory<>("city"));
-        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("street"));
-        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("number"));
-        columnRoomType.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
-        columnPay.setCellValueFactory(new PropertyValueFactory<>("placeOfBirth"));
+        columnPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phonenumber"));
+        columnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startdate"));
+        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("enddate"));
+        columnRoomType.setCellValueFactory(new PropertyValueFactory<>("roomtype"));
+        columnPay.setCellValueFactory(new PropertyValueFactory<>("payment"));
     }
 
     @FXML
     private void handleSearch() {
         try {
-            ObservableList<CareTaking> data = FXCollections.observableArrayList(
-                    caretakersRepository.findByColumn(getColumnName(cbColumnName.getValue().trim()),
+            ObservableList<Guests> data = FXCollections.observableArrayList(
+                    guestsRepository.findByColumn(getColumnName(cbColumnName.getValue().trim()),
                             tfSearch.getText().trim()));
-            tfSearchByColumn.clear();
-            caretake.setItems(data);
+            tfSearch.clear();
+            table.setItems(data);
             initColumn();
         }catch (Exception e){
             Logger.error("Search by invalid type");
@@ -101,7 +102,7 @@ public class MainPageController {
             return columnName;
         }
         else if(name.equals("E-mail")){
-            columnName = "emial";
+            columnName = "emaill";
             return columnName;
         }
         else if(name.equals("Szoba kivétele")){
