@@ -68,6 +68,7 @@
                   <ComboBox fx:id="cbColumnName" maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                       <items>
                           <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="ID" />
                               <String fx:value="Név" />
                               <String fx:value="Telefonszám" />
                               <String fx:value="E-mail" />
