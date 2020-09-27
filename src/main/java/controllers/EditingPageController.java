@@ -1,8 +1,18 @@
 package controllers;
 
+import database.GuestsRepository;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.util.converter.IntegerStringConverter;
+import javafx.util.converter.LocalDateStringConverter;
+import model.Guests;
+import org.tinylog.Logger;
+
+import java.time.LocalDate;
 
 public class EditingPageController {
 
@@ -16,66 +26,62 @@ public class EditingPageController {
     private Button btnSearch;
 
     @FXML
-    private TableView<?> table;
+    private TableView<Guests> table;
 
     @FXML
-    private TableColumn<?, ?> columnID;
+    private TableColumn<Guests, Integer> columnID;
 
     @FXML
-    private TableColumn<?, ?> columnName;
+    private TableColumn<Guests, String> columnName;
 
     @FXML
-    private TableColumn<?, ?> columnPhoneNumber;
+    private TableColumn<Guests, Integer> columnPhoneNumber;
 
     @FXML
-    private TableColumn<?, ?> columnEmail;
+    private TableColumn<Guests, String> columnEmail;
 
     @FXML
-    private TableColumn<?, ?> columnStartDate;
+    private TableColumn<Guests, LocalDate> columnStartDate;
 
     @FXML
-    private TableColumn<?, ?> columnEndDate;
+    private TableColumn<Guests, LocalDate> columnEndDate;
 
     @FXML
-    private TableColumn<?, ?> columnRoomType;
+    private TableColumn<Guests, String> columnRoomType;
 
     @FXML
-    private TableColumn<?, ?> columnPay;
+    private TableColumn<Guests, Integer> columnPayment;
 
     @FXML
-    private TableColumn<?, ?> columnDelete;
+    private TableColumn<Guests, Guests> columnDelete;
 
 
-    //private EldersRepository eldersRepository = new EldersRepository();
+    private GuestsRepository guestsRepository = new GuestsRepository();
 
-    /*@FXML
+   /* @FXML
     protected void initialize() {
-        new Thread(new Runnable() {
-            @Override public void run() {
-                handleSearch();
-            }
-        }).start();
+        new Thread(() -> handleSearch()).start();
     }
 
     private void initColumn() {
         columnID.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        columnPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("gender"));
-        columnEmail.setCellValueFactory(new PropertyValueFactory<>("city"));
-        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("street"));
-        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("number"));
-        columnRoomType.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
-        columnPay.setCellValueFactory(new PropertyValueFactory<>("placeOfBirth"));
+        columnPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phonenumber"));
+        columnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startdate"));
+        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("enddate"));
+        columnRoomType.setCellValueFactory(new PropertyValueFactory<>("roomtype"));
+        columnPayment.setCellValueFactory(new PropertyValueFactory<>("payment"));
     }
 
     @FXML
     private void handleSearch() {
         try {
-            ObservableList<CareTaking> data = FXCollections.observableArrayList(
-                    caretakersRepository.findByColumn(getColumnName(cbColumnName.getValue().trim()),
+            ObservableList<Guests> data = FXCollections.observableArrayList(
+                    guestsRepository.findByColumn(getColumnName(cbColumnName.getValue().trim()),
                             tfSearch.getText().trim()));
-            tfSearchByColumn.clear();
-            caretake.setItems(data);
+            tfSearch.clear();
+            table.setItems(data);
             initColumn();
         }catch (Exception e){
             Logger.error("Search by invalid type");
@@ -85,7 +91,7 @@ public class EditingPageController {
             alert.setContentText("Érvénytelen típus adat vagy hibás adatbázis kapcsolat.");
             alert.showAndWait();
         }
-    }
+    }*/
 
     private String getColumnName(String name){
         String columnName;
@@ -121,82 +127,89 @@ public class EditingPageController {
             columnName = "payment";
             return columnName;
         }
-    }*/
+    }
 
-    /*private void editTableColumns (){
+    private void editTableColumns (){
+
+        columnName.setCellFactory(TextFieldTableCell.forTableColumn());
+        columnName.setOnEditCommit(expStringCellEditEvent -> {
+            Guests tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setName(expStringCellEditEvent.getNewValue());
+            guestsRepository.commitChange(tmp);
+        });
+
+        columnPhoneNumber.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        columnPhoneNumber.setOnEditCommit(expStringCellEditEvent -> {
+            Guests tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setPhonenumber(expStringCellEditEvent.getNewValue());
+            guestsRepository.commitChange(tmp);
+        });
+
+        columnEmail.setCellFactory(TextFieldTableCell.forTableColumn());
+        columnEmail.setOnEditCommit(expStringCellEditEvent -> {
+            Guests tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setEmail(expStringCellEditEvent.getNewValue());
+            guestsRepository.commitChange(tmp);
+        });
+
+        columnStartDate.setCellFactory(TextFieldTableCell.forTableColumn(new LocalDateStringConverter()));
+        columnStartDate.setOnEditCommit(expLocalDateCellEditEvent -> {
+            Guests tmp = expLocalDateCellEditEvent.getTableView().getItems().
+                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
+            tmp.setStartdate(expLocalDateCellEditEvent.getNewValue());
+            guestsRepository.commitChange(tmp);
+        });
+
+        columnEndDate.setCellFactory(TextFieldTableCell.forTableColumn(new LocalDateStringConverter()));
+        columnEndDate.setOnEditCommit(expLocalDateCellEditEvent -> {
+            Guests tmp = expLocalDateCellEditEvent.getTableView().getItems().
+                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
+            tmp.setStartdate(expLocalDateCellEditEvent.getNewValue());
+            guestsRepository.commitChange(tmp);
+        });
+
+        columnRoomType.setCellFactory(TextFieldTableCell.forTableColumn());
+        columnRoomType.setOnEditCommit(expStringCellEditEvent -> {
+            Guests tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setEmail(expStringCellEditEvent.getNewValue());
+            guestsRepository.commitChange(tmp);
+        });
+
+        columnPayment.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        columnPayment.setOnEditCommit(expStringCellEditEvent -> {
+            Guests tmp = expStringCellEditEvent.getTableView().getItems().
+                    get(expStringCellEditEvent.getTablePosition().getRow());
+            tmp.setPhonenumber(expStringCellEditEvent.getNewValue());
+            guestsRepository.commitChange(tmp);
+        });
 
 
-        columnElderName.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnElderName.setOnEditCommit(expStringCellEditEvent -> {
-            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
-                    get(expStringCellEditEvent.getTablePosition().getRow());
-            tmp.setElderName(expStringCellEditEvent.getNewValue());
-            caretakersRepository.commitChange(tmp);
-        });
-        columnEmployeeName.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnEmployeeName.setOnEditCommit(expStringCellEditEvent -> {
-            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
-                    get(expStringCellEditEvent.getTablePosition().getRow());
-            tmp.setEmployeeName(expStringCellEditEvent.getNewValue());
-            caretakersRepository.commitChange(tmp);
-        });
-        columnLunch.setCellFactory(TextFieldTableCell.forTableColumn());
-        columnLunch.setOnEditCommit(expStringCellEditEvent -> {
-            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
-                    get(expStringCellEditEvent.getTablePosition().getRow());
-            tmp.setLunch(expStringCellEditEvent.getNewValue());
-            caretakersRepository.commitChange(tmp);
-        });
-        columnPrice.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        columnPrice.setOnEditCommit(expStringCellEditEvent -> {
-            CareTaking tmp = expStringCellEditEvent.getTableView().getItems().
-                    get(expStringCellEditEvent.getTablePosition().getRow());
-            tmp.setPrice(expStringCellEditEvent.getNewValue());
-            caretakersRepository.commitChange(tmp);
-        });
-        columnDate.setCellFactory(TextFieldTableCell.forTableColumn(new LocalDateStringConverter()));
-        columnDate.setOnEditCommit(expLocalDateCellEditEvent -> {
-            CareTaking tmp = expLocalDateCellEditEvent.getTableView().getItems().
-                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
-            tmp.setDate(expLocalDateCellEditEvent.getNewValue());
-            caretakersRepository.commitChange(tmp);
-        });
-        columnCareTime.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
-        columnCareTime.setOnEditCommit(expLocalDateCellEditEvent -> {
-            CareTaking tmp = expLocalDateCellEditEvent.getTableView().getItems().
-                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
-            tmp.setCareTime(expLocalDateCellEditEvent.getNewValue());
-            caretakersRepository.commitChange(tmp);
-        });
-        columnCareTimeWithoutTravel.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
-        columnCareTimeWithoutTravel.setOnEditCommit(expLocalDateCellEditEvent -> {
-            CareTaking tmp = expLocalDateCellEditEvent.getTableView().getItems().
-                    get(expLocalDateCellEditEvent.getTablePosition().getRow());
-            tmp.setCareTimeWithoutTravel(expLocalDateCellEditEvent.getNewValue());
-            caretakersRepository.commitChange(tmp);
-        });
         columnDelete.setCellFactory(param -> new TableCell<>() {
             private final Button deleteButton = new Button("Törölés");
 
             @Override
-            protected void updateItem(CareTaking caretake, boolean empty) {
-                super.updateItem(caretake, empty);
-                if (caretake == null) {
+            protected void updateItem(Guests guest, boolean empty) {
+                super.updateItem(guest, empty);
+                if (guest == null) {
                     setGraphic(null);
                     return;
                 }
                 setGraphic(deleteButton);
-                deleteButton.setOnAction(actionEvent -> deleteRow(getTableView(), caretake)
+                deleteButton.setOnAction(actionEvent -> deleteRow(getTableView(), guest)
                 );
             }
         });
-        caretake.setEditable(true);
+        table.setEditable(true);
     }
 
-    private void deleteRow(TableView tableView, CareTaking careTake){
+    private void deleteRow(TableView tableView, Guests guest){
         try {
-            tableView.getItems().remove(careTake);
-            caretakersRepository.removeCareTake(careTake);
+            tableView.getItems().remove(guest);
+            guestsRepository.removeGuests(guest);
         }catch (Exception e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Hiba üzenet");
@@ -204,6 +217,6 @@ public class EditingPageController {
             alert.setContentText("A kijelöltt sor törlése sikertelen.");
             alert.showAndWait();
         }
-    }*/
+    }
 }
 
