@@ -56,4 +56,10 @@ public class GuestsRepository {
             em.close();
         }
     }
+
+    /**
+     * Allows you to change the data in the Guests table cells.
+     * @param change
+     */
+
 }
