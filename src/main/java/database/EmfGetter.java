@@ -11,7 +11,7 @@ public class EmfGetter {
 
     private EmfGetter(){}
 
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("UsersDB");
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("GuestsDB");
 
     public static EntityManager getEntityManager(){
         return emf.createEntityManager();
