@@ -17,10 +17,10 @@ import java.util.List;
 public class GuestsRepository {
 
     /**
-     * This find rows by selectedColumn in the Primary table.
+     * This find rows by selectedColumn in the Guests table.
      * @param selectedColumn
      * @param entity
-     * @return a list of Primary
+     * @return a list of Guests
      */
     public List<Guests> findByColumn(String selectedColumn, String entity) {
         EntityManager em = EmfGetter.getEntityManager();
