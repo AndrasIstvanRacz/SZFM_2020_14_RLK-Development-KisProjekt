@@ -74,4 +74,9 @@ public class GuestsRepository {
             em.close();
         }
     }
+
+    /**
+     * Remove Guests from the table.
+     * @param entity
+     */
 }
