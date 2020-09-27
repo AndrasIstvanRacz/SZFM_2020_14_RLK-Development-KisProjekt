@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
- * This Class make the connection to the database.
+ * This Class makes the connection to the database.
  */
 public class EmfGetter {
 

@@ -8,25 +8,44 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GuestsRepository {
 
     /**
-     * This find rows by name in the Guests table.
-     * @param selectedName
-     * @return a list of Guests
+     * This find rows by selectedColumn in the Primary table.
+     * @param selectedColumn
+     * @param entity
+     * @return a list of Primary
      */
-
-    public List<Guests> findByName(String selectedName) {
+    public List<Guests> findByColumn(String selectedColumn, String entity) {
         EntityManager em = EmfGetter.getEntityManager();
         CriteriaBuilder cb = em.getCriteriaBuilder();
 
         CriteriaQuery<Guests> cq = cb.createQuery(Guests.class);
         Root<Guests> from = cq.from(Guests.class);
-
-        cq.select(from).where(cb.like(from.get("name"), selectedName));
+        if(entity.isEmpty()){
+            cq.select(from);
+        } else {
+            if (selectedColumn.equals("id") || selectedColumn.equals("payment"))  {
+                Integer number = Integer.parseInt(entity);
+                cq.select(from).where(cb.equal(from.get(selectedColumn), number));
+            }else if (selectedColumn.equals("id") || selectedColumn.equals("phonenumber")) {
+                Integer number = Integer.parseInt(entity);
+                cq.select(from).where(cb.equal(from.get(selectedColumn), number));
+            }
+            else if (selectedColumn.equals("startdate") || selectedColumn.equals("enddate")) {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+                LocalTime time = LocalTime.parse(entity, dtf);
+                cq.select(from).where(cb.equal(from.get(selectedColumn), time));
+            } else {
+                cq.select(from).where(cb.like(from.get(selectedColumn), "%" + entity + "%"));
+            }
+        }
         try {
             Query q = em.createQuery(cq);
             Logger.info("Select completed successful");
@@ -43,7 +62,7 @@ public class GuestsRepository {
      * Insert new guest in the table.
      * @param newGuest
      */
-    public void insertGuest(Guests newGuest){
+    public void insertGuests(Guests newGuest){
         EntityManager em = EmfGetter.getEntityManager();
         try {
             em.getTransaction().begin();
