@@ -38,4 +38,9 @@ public class GuestsRepository {
         }
         return new ArrayList<>();
     }
+
+    /**
+     * Insert new guest in the table.
+     * @param newGuest
+     */
 }
