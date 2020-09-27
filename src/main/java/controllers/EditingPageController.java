@@ -111,7 +111,7 @@ public class EditingPageController {
             return columnName;
         }
         else if(name.equals("E-mail")){
-            columnName = "emial";
+            columnName = "email";
             return columnName;
         }
         else if(name.equals("Szoba kivétele")){
