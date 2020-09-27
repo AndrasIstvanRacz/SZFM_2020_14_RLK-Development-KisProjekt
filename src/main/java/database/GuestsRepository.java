@@ -19,4 +19,23 @@ public class GuestsRepository {
      * @return a list of Guests
      */
 
+    public List<Guests> findByName(String selectedName) {
+        EntityManager em = EmfGetter.getEntityManager();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        CriteriaQuery<Guests> cq = cb.createQuery(Guests.class);
+        Root<Guests> from = cq.from(Guests.class);
+
+        cq.select(from).where(cb.like(from.get("name"), selectedName));
+        try {
+            Query q = em.createQuery(cq);
+            Logger.info("Select completed successful");
+            return q.getResultList();
+        } catch (Exception e) {
+            Logger.error("Select failed");
+        } finally {
+            em.close();
+        }
+        return new ArrayList<>();
+    }
 }
