@@ -12,4 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuestsRepository {
+
+    /**
+     * This find rows by name in the Guests table.
+     * @param selectedName
+     * @return a list of Guests
+     */
+
 }
