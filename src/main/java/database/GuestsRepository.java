@@ -43,4 +43,17 @@ public class GuestsRepository {
      * Insert new guest in the table.
      * @param newGuest
      */
+    public void insertGuest(Guests newGuest){
+        EntityManager em = EmfGetter.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(newGuest);
+            em.getTransaction().commit();
+            Logger.info("Inserting new guest into the database successfully");
+        }catch (Exception e){
+            Logger.error("Inserting new guest into the database failed");
+        }finally {
+            em.close();
+        }
+    }
 }
