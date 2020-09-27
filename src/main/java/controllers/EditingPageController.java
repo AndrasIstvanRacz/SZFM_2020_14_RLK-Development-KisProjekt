@@ -1,6 +1,11 @@
 package controllers;
 
 import database.GuestsRepository;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import model.Guests;
+
+import java.time.LocalDate;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,10 +14,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalDateStringConverter;
-import model.Guests;
-import org.tinylog.Logger;
 
-import java.time.LocalDate;
+import org.tinylog.Logger;
 
 public class EditingPageController {
 
@@ -21,9 +24,6 @@ public class EditingPageController {
 
     @FXML
     private TextField tfSearch;
-
-    @FXML
-    private Button btnSearch;
 
     @FXML
     private TableView<Guests> table;
@@ -58,7 +58,7 @@ public class EditingPageController {
 
     private GuestsRepository guestsRepository = new GuestsRepository();
 
-   /* @FXML
+   @FXML
     protected void initialize() {
         new Thread(() -> handleSearch()).start();
     }
@@ -72,6 +72,9 @@ public class EditingPageController {
         columnEndDate.setCellValueFactory(new PropertyValueFactory<>("enddate"));
         columnRoomType.setCellValueFactory(new PropertyValueFactory<>("roomtype"));
         columnPayment.setCellValueFactory(new PropertyValueFactory<>("payment"));
+        columnDelete.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+
+        editTableColumns();
     }
 
     @FXML
@@ -91,7 +94,7 @@ public class EditingPageController {
             alert.setContentText("Érvénytelen típus adat vagy hibás adatbázis kapcsolat.");
             alert.showAndWait();
         }
-    }*/
+    }
 
     private String getColumnName(String name){
         String columnName;
@@ -167,7 +170,7 @@ public class EditingPageController {
         columnEndDate.setOnEditCommit(expLocalDateCellEditEvent -> {
             Guests tmp = expLocalDateCellEditEvent.getTableView().getItems().
                     get(expLocalDateCellEditEvent.getTablePosition().getRow());
-            tmp.setStartdate(expLocalDateCellEditEvent.getNewValue());
+            tmp.setEnddate(expLocalDateCellEditEvent.getNewValue());
             guestsRepository.commitChange(tmp);
         });
 
@@ -175,7 +178,7 @@ public class EditingPageController {
         columnRoomType.setOnEditCommit(expStringCellEditEvent -> {
             Guests tmp = expStringCellEditEvent.getTableView().getItems().
                     get(expStringCellEditEvent.getTablePosition().getRow());
-            tmp.setEmail(expStringCellEditEvent.getNewValue());
+            tmp.setRoomtype(expStringCellEditEvent.getNewValue());
             guestsRepository.commitChange(tmp);
         });
 
@@ -183,7 +186,7 @@ public class EditingPageController {
         columnPayment.setOnEditCommit(expStringCellEditEvent -> {
             Guests tmp = expStringCellEditEvent.getTableView().getItems().
                     get(expStringCellEditEvent.getTablePosition().getRow());
-            tmp.setPhonenumber(expStringCellEditEvent.getNewValue());
+            tmp.setPayment(expStringCellEditEvent.getNewValue());
             guestsRepository.commitChange(tmp);
         });
 
@@ -218,5 +221,6 @@ public class EditingPageController {
             alert.showAndWait();
         }
     }
+
 }
 

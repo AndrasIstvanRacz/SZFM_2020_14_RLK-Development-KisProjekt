@@ -35,7 +35,7 @@
     -fx-border-radius: 0;
 }
 .combo-box-popup .list-view {
-    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-background-color: rgba(0, 0, 0, 0.6);
     -fx-text-fill: white;
     -fx-background-radius: 0;
     -fx-border-width: 0;

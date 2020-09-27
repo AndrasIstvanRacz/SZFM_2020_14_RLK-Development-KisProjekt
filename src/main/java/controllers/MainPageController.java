@@ -52,7 +52,7 @@ public class MainPageController {
 
     private GuestsRepository guestsRepository = new GuestsRepository();
 
-    /*@FXML
+    @FXML
     protected void initialize() {
         new Thread(() -> handleSearch()).start();
     }
@@ -121,5 +121,5 @@ public class MainPageController {
             columnName = "payment";
             return columnName;
         }
-    }*/
+    }
 }

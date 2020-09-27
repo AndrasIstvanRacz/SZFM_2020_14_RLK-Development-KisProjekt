@@ -62,7 +62,7 @@ public class GuestsRepository {
      * Insert new guest in the table.
      * @param newGuest
      */
-    public void insertGuests(Guests newGuest){
+    public void insertGuest(Guests newGuest){
         EntityManager em = EmfGetter.getEntityManager();
         try {
             em.getTransaction().begin();

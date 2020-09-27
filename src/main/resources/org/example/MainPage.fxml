@@ -30,6 +30,9 @@
         </rowConstraints>
          <children>
             <TableView fx:id="table" cacheShape="false" centerShape="false" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false" scaleShape="false" stylesheets="@../../css/TableStyle.css" GridPane.rowIndex="1">
+                <placeholder>
+                    <Label text="Nincs Adat"/>
+                </placeholder>
               <columns>
                 <TableColumn fx:id="columnID" minWidth="-1.0" prefWidth="-1.0" text="ID" />
                 <TableColumn fx:id="columnName" minWidth="-1.0" prefWidth="-1.0" text="Név" />
@@ -60,7 +63,7 @@
                 <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
               </rowConstraints>
                 <children>
-                  <Button fx:id="btnSearch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/SecondaryStyle.css" text="Keresés" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Button fx:id="btnSearch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/SecondaryStyle.css" text="Keresés" GridPane.columnIndex="5" GridPane.rowIndex="1" onAction="#handleSearch"/>
                   <TextField fx:id="tfSearch" maxHeight="30.0" maxWidth="1.7976931348623157E308" prefColumnCount="0" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                   <ComboBox fx:id="cbColumnName" maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" stylesheets="@../../css/SecondaryStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                       <items>
