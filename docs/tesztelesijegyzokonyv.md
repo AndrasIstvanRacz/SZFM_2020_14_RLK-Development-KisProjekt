@@ -9,3 +9,4 @@ T-03 | Keresés az adatbázisban megadot érték szerint. | Sikeres | Balázs
 T-04 | Új vendég hozzáadása az adatbázishoz. | Sikeres | Balázs
 T-05 | Az adatbazis rekordjainak módosítása. | Sikeres | Balázs
 T-06 | Vendég törlése. | Sikeres | Balázs
+T-07 | Típushiba kezelésének tesztelése. | Sikeres | Balázs
