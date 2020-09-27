@@ -10,3 +10,4 @@ T-04 | Új vendég hozzáadása az adatbázishoz. | Sikeres | Balázs
 T-05 | Az adatbazis rekordjainak módosítása. | Sikeres | Balázs
 T-06 | Vendég törlése. | Sikeres | Balázs
 T-07 | Típushiba kezelésének tesztelése. | Sikeres | Balázs
+T-08 | Grafikus felület reszponzivításának tesztelése. | Sikeres | Balázs
