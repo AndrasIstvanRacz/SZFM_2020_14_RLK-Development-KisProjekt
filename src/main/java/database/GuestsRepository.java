@@ -61,5 +61,17 @@ public class GuestsRepository {
      * Allows you to change the data in the Guests table cells.
      * @param change
      */
-
+    public void  commitChange(Guests change){
+        EntityManager em = EmfGetter.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.merge(change);
+            em.getTransaction().commit();
+            Logger.info("Commit success");
+        }catch (Exception e){
+            Logger.error("Commit failed");
+        }finally {
+            em.close();
+        }
+    }
 }
