@@ -49,7 +49,7 @@
             <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Szoba típusa" GridPane.columnIndex="1" GridPane.rowIndex="10" stylesheets="@../../css/SecondaryStyle.css" fx:id="tfRoomType"/>
             <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Fizetendő összeg" GridPane.columnIndex="1" GridPane.rowIndex="12" stylesheets="@../../css/SecondaryStyle.css" fx:id="tfPayment"/>
             <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Hozzáad" GridPane.columnIndex="3" GridPane.rowIndex="12" stylesheets="@../../css/SecondaryStyle.css" onAction="#handleAdd"/>
-            <DatePicker editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Szoba elhagyásának dátuma" GridPane.columnIndex="1" GridPane.rowIndex="8" stylesheets="@../../css/DatePickerStyle.css" fx:id="tfEndDate"/>
+            <DatePicker editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Szoba elhagyásának dátuma" GridPane.columnIndex="1" GridPane.rowIndex="8" stylesheets="@../../css/DatePickerStyle.css" fx:id="dpEndDate"/>
          </children>
       </GridPane>
    </children>
