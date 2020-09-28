@@ -1,0 +1,64 @@
+.button{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+}
+
+.button:pressed {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+}
+
+.text-field {
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+}
+
+.combo-box {
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(0, 0, 0, 0.6);
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+}
+
+.combo-box .list-cell{
+    -fx-background-color:transparent;
+    -fx-text-fill: white;
+}
+
+.combo-box .list-cell:hover{
+    -fx-background-color:rgba(0, 0, 0, 0.3);
+}
+
+.combo-box .list-cell:pressed{
+    -fx-background-color:rgba(0, 0, 0, 0.4);
+}
+
+.label {
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-text-fill: White;
+    -fx-font-size: 36px;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+}

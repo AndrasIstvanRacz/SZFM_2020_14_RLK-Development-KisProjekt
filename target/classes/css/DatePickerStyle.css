@@ -1,0 +1,100 @@
+
+.date-picker {
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+}
+
+.date-picker .combo-box {
+    -fx-background-insets:0px ;
+    -fx-border-width: 0px;
+    -fx-background-color: transparent;
+
+}
+
+.date-picker .text-field{
+    -fx-background-radius:0px ;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.date-picker .arrow-button{
+    -fx-background-radius:0px ;
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+}
+
+.date-picker .arrow-button .arrow{
+    -fx-background-radius:0px ;
+    -fx-background-color: white;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-radius:0px ;
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+}
+
+.date-picker .button {
+    -fx-background-color: transparent;
+    -fx-border-color:transparent;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 35px;
+}
+
+.date-picker .button:hover {
+    -fx-background-color:rgba(0, 0, 0, 0.7);
+    -fx-pref-height: 35px;
+    -fx-pref-width: 35px;
+}
+
+.date-picker .button .arrow:pressed {
+    -fx-background-color:rgba(0, 0, 0, 0.8);
+    -fx-pref-height: 35px;
+    -fx-pref-width: 35px;
+}
+
+.date-picker-popup {
+    -fx-background-color: rgba(0, 0, 0, 0.6);
+    -fx-control-inner-background: transparent;
+    -fx-text-fill: white;
+}
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup > .month-year-pane {
+     -fx-background-color: transparent;
+ }
+
+.date-picker-popup > .month-year-pane .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup > * > .date-cell {
+    -fx-background-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-padding: 0;
+    -fx-alignment: BASELINE_CENTER;
+    -fx-opacity: 1.0;
+    -fx-text-fill: white;
+}
+
+.date-picker .cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-pref-width:20px ;
+    -fx-pref-height:25px ;
+}
+
+.date-picker .cell:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-border-color: transparent;
+    -fx-pref-width:20px ;
+    -fx-pref-height:25px ;
+}
+
+.date-picker .cell:focused {
+    -fx-background-color:transparent;
+    -fx-border-color: transparent;
+    -fx-pref-width:20px ;
+    -fx-pref-height:25px ;
+}

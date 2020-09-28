@@ -1,0 +1,10 @@
+controllers\EditingPageController.class
+model\Guests.class
+database\GuestsRepository.class
+controllers\AdditionPageController.class
+database\EmfGetter.class
+org\example\Main.class
+controllers\MainPageController.class
+controllers\EditingPageController$1.class
+controllers\MainWindowController.class
+org\example\App.class
