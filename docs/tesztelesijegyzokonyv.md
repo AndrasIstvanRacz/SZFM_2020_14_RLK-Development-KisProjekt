@@ -31,4 +31,4 @@ T-25 | E-mail oszlop sorbarendezése nagyság szerint | Sikeres | Zoltán
 T-26 | Szoba kivétele oszlop sorbarendezése nagyság szerint | Sikeres | Zoltán
 T-27 | Szoba elhagyása oszlop sorbarendezése nagyság szerint | Sikeres | Zoltán
 T-28 | Szoba típusa oszlop sorbarendezése nagyság szerint | Sikeres | Zoltán
-T-28 | Fizetendő összeg oszlop sorbarendezése nagyság szerint | Sikeres | Zoltán
+T-29 | Fizetendő összeg oszlop sorbarendezése nagyság szerint | Sikeres | Zoltán
